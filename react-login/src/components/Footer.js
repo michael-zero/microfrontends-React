@@ -3,25 +3,18 @@ import styled from 'styled-components'
 const Footer = () => {
     return (
         <FooterContainer>
-            <Container>
-                <p>Todos os direitos reservados.</p>
-            </Container>
+            <p>&copy; 2021 ZeroCorps. All rights reserved.</p>
         </FooterContainer>
     )
 }
 
 export default Footer
-
-
-const Container = styled.div`
-    position: fixed;
-    bottom: 0;
+const FooterContainer = styled.footer`
     max-width: 1400px;
     width: 100%;
-    margin: 0 auto;
-`
+    p{
+        text-align: center;
+    }
 
-const FooterContainer = styled.footer`
-    outline: 1px solid red;
-    display: flex; 
+     margin-top: 90px;
 `

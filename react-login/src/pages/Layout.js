@@ -5,13 +5,13 @@ import Footer from '../components/Footer'
 
 const Layout = ({children}) => {
     return (
-        <div>
+        <Wrapper>
            <Navbar/>
             <Pagina>
              {children}
             </Pagina>
            <Footer/>
-        </div>
+        </Wrapper>
     )
 }
 
@@ -20,7 +20,9 @@ const Pagina = styled.main`
     max-width: 1400px;
     width: 100%;
     margin: 0 auto;
-    height: 70vh;
+`
+
+const Wrapper = styled.div`
 `
 
 export default Layout
