@@ -3,16 +3,31 @@ import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 const Navbar = () => {
     return (
+        
         <Header>
-            <Logo>
-                <Titulo to="/">Zero Corps</Titulo>
-            </Logo>
+            <Container>
+                <Logo>
+                    <LogoText to="/">Zero&nbsp;Corps</LogoText>
+                </Logo>
 
-            <NavMenu>
-                <NavItem>
-                    <NavLink to="products" end>Store</NavLink>
-                </NavItem>
-            </NavMenu>
+                <NavMenu>
+                    <NavItem>
+                        <LinkText to="products" end>STORE</LinkText>
+                    </NavItem>
+                    <NavItem>
+                        <LinkText to="products" end>ABOUT</LinkText>
+                    </NavItem>
+                    <NavItem>
+                        <LinkText to="products" end>LOGIN</LinkText>
+                    </NavItem>
+                </NavMenu>
+
+                <NavMenu>
+                    <NavItem>
+                        <LinkText to="products" end>GITHUB</LinkText>
+                    </NavItem>
+                </NavMenu>
+            </Container>
         </Header>
     )
 }
@@ -20,29 +35,51 @@ const Navbar = () => {
 export default Navbar
 
 
-const Header = styled.header`
+const Container = styled.div`
     display: flex;
     align-items: center;
-    
+    justify-content: space-between;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+`
+
+const Header = styled.header`
+    outline: 1px solid pink;
+    display: flex; 
 `
 const Logo = styled.div`
-    max-width: 130px;
-    margin-right: 20px
+    max-width: 160px;
+    
 
 `
 const NavMenu = styled.ul`
-    display: 'flex';
-    max-width: 200px
+    display: flex;
+    list-style: none;
 `
 const NavItem = styled.li`
-    display: flex;
-    text-decoration: none;
+    margin-right: 10px;
 
     a {
         text-decoration: none;
+        line-height: 54px;
+
+    }
+
+    @media (min-width: 400px){
+        margin-right: 20px;
     }
 `
-const Titulo = styled(NavLink)`
-    font-size: 1.2rem;
+const LinkText = styled(NavLink)`
     text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+
+`
+const LogoText = styled(NavLink)`
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 54px;
+
 `
